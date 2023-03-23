@@ -1,0 +1,716 @@
+------------------------------------------------------------
+Installing p4lang/p4c
+start install p4c:
+++ date
+2023年 03月 22日 星期三 14:31:22 CST
+++ sudo apt-get --yes install g++ git automake libtool libgc-dev bison flex libfl-dev libgmp-dev libboost-dev libboost-iostreams-dev libboost-graph-dev llvm pkg-config python3-pip tcpdump
+正在读取软件包列表...
+正在分析软件包的依赖关系树...
+正在读取状态信息...
+automake 已经是最新版 (1:1.16.1-4ubuntu6)。
+bison 已经是最新版 (2:3.5.1+dfsg-1)。
+flex 已经是最新版 (2.6.4-6.2)。
+g++ 已经是最新版 (4:9.3.0-1ubuntu2)。
+libboost-dev 已经是最新版 (1.71.0.0ubuntu2)。
+libfl-dev 已经是最新版 (2.6.4-6.2)。
+libgc-dev 已经是最新版 (1:7.6.4-0.4ubuntu1)。
+libtool 已经是最新版 (2.4.6-14)。
+pkg-config 已经是最新版 (0.29.1-0ubuntu4)。
+libboost-graph-dev 已经是最新版 (1.71.0.0ubuntu2)。
+libboost-iostreams-dev 已经是最新版 (1.71.0.0ubuntu2)。
+llvm 已经是最新版 (1:10.0-50~exp1)。
+git 已经是最新版 (1:2.25.1-1ubuntu3.10)。
+libgmp-dev 已经是最新版 (2:6.2.0+dfsg-4ubuntu0.1)。
+tcpdump 已经是最新版 (4.9.3-4ubuntu0.2)。
+python3-pip 已经是最新版 (20.0.2-5ubuntu1.8)。
+下列软件包是自动安装的并且现在不需要了：
+  libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib python2-minimal
+  python2.7 python2.7-minimal python3-pymacaroons python3-rfc3339 python3-tz
+使用'sudo apt autoremove'来卸载它(它们)。
+升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 515 个软件包未被升级。
+++ pip3 list
+Package                  Version             
+------------------------ --------------------
+apturl                   0.5.2               
+astroid                  2.3.3               
+backcall                 0.2.0               
+bcrypt                   3.1.7               
+blinker                  1.4                 
+Brlapi                   0.7.0               
+certifi                  2019.11.28          
+chardet                  3.0.4               
+Click                    7.0                 
+colorama                 0.4.3               
+command-not-found        0.3                 
+crcmod                   1.7                 
+cryptography             2.8                 
+cupshelpers              1.0                 
+dbus-python              1.2.16              
+decorator                5.1.1               
+defer                    1.0.6               
+distro                   1.4.0               
+distro-info              0.23ubuntu1         
+duplicity                0.8.12.0            
+entrypoints              0.3                 
+fasteners                0.14.1              
+future                   0.18.2              
+googleapis-common-protos 1.58.0              
+grpcio                   1.51.3              
+httplib2                 0.14.0              
+idna                     2.8                 
+ipaddr                   2.2.0               
+ipython                  7.31.1              
+isort                    4.3.4               
+jedi                     0.17.2              
+keyring                  18.0.1              
+language-selector        0.1                 
+launchpadlib             1.10.13             
+lazr.restfulclient       0.14.2              
+lazr.uri                 1.0.3               
+lazy-object-proxy        1.4.3               
+lockfile                 0.12.2              
+logilab-common           1.4.3               
+louis                    3.12.0              
+Mako                     1.1.0               
+MarkupSafe               1.1.0               
+matplotlib-inline        0.1.6               
+mccabe                   0.6.1               
+monotonic                1.5                 
+netifaces                0.10.4              
+oauthlib                 3.1.0               
+olefile                  0.46                
+p4runtime                1.3.0               
+p4runtime-shell          0.0.3.post5+g2603e13
+paramiko                 2.6.0               
+parso                    0.7.1               
+pexpect                  4.6.0               
+pickleshare              0.7.5               
+Pillow                   7.0.0               
+pip                      20.0.2              
+prompt-toolkit           3.0.38              
+protobuf                 3.20.3              
+psutil                   5.9.4               
+pycairo                  1.16.2              
+pycodestyle              2.5.0               
+pycups                   1.9.73              
+pyflakes                 2.1.1               
+Pygments                 2.3.1               
+PyGObject                3.36.0              
+PyJWT                    1.7.1               
+pylint                   2.4.4               
+pymacaroons              0.13.0              
+PyNaCl                   1.3.0               
+pyRFC3339                1.1                 
+python-apt               2.0.0+ubuntu0.20.4.4
+python-dateutil          2.7.3               
+python-debian            0.1.36ubuntu1       
+pytz                     2019.3              
+pyxdg                    0.26                
+PyYAML                   5.3.1               
+reportlab                3.5.34              
+requests                 2.22.0              
+requests-unixsocket      0.2.0               
+SecretStorage            2.3.1               
+setuptools               45.2.0              
+simplejson               3.16.0              
+six                      1.14.0              
+ssh-import-id            5.10                
+systemd-python           234                 
+traitlets                5.9.0               
+ubuntu-advantage-tools   20.3                
+ubuntu-drivers-common    0.0.0               
+ufw                      0.36                
+unattended-upgrades      0.1                 
+urllib3                  1.25.8              
+usb-creator              0.3.7               
+wadllib                  1.3.3               
+wcwidth                  0.2.6               
+wheel                    0.34.2              
+wrapt                    1.11.2              
+xkit                     0.0.0               
+++ cd p4c
+++ mkdir build
+++ cd build
+++ cmake .. -DCMAKE_BUILD_TYPE=DEBUG
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Found FLEX: /usr/bin/flex (found suitable version "2.6.4", minimum required is "2.0") 
+-- Found BISON: /usr/bin/bison (found suitable version "3.5.1", minimum required is "3.0") 
+-- Found Protobuf: /usr/local/lib/libprotobuf.a;-lpthread (found suitable version "3.18.1", minimum required is "3.0.0") 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: iostreams 
+-- Found LibGc: /usr/lib/x86_64-linux-gnu/libgccpp.so (found suitable version "7.6.4", minimum required is "7.4.2") 
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- Looking for clock_gettime in rt
+-- Looking for clock_gettime in rt - found
+-- Looking for execinfo.h
+-- Looking for execinfo.h - found
+-- Looking for ucontext.h
+-- Looking for ucontext.h - found
+-- Looking for C++ include cxxabi.h
+-- Looking for C++ include cxxabi.h - found
+-- Looking for memchr
+-- Looking for memchr - found
+-- Looking for pipe2
+-- Looking for pipe2 - found
+-- Looking for GC_print_stats
+-- Looking for GC_print_stats - found
+-- Found PY_difflib: /usr/lib/python3.8/difflib.py  
+-- Found PY_shutil: /usr/lib/python3.8/shutil.py  
+-- Found PY_tempfile: /usr/lib/python3.8/tempfile.py  
+-- Found PY_subprocess: /usr/lib/python3.8/subprocess.py  
+-- Found PY_re: /usr/lib/python3.8/re.py  
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Found BMV2: /usr/local/bin/simple_switch  
+-- Found BMV2: /usr/local/bin/simple_switch_grpc  
+-- Found BMV2: /usr/local/bin/psa_switch  
+-- Could NOT find PY_scapy (missing: PY_SCAPY) 
+-- Found PY_ipaddr: /usr/local/lib/python3.8/dist-packages/ipaddr.py  
+-- Performing Test _HAVE_OPTION_Wall_
+-- Performing Test _HAVE_OPTION_Wall_ - Success
+-- Performing Test _HAVE_OPTION_Wextra_
+-- Performing Test _HAVE_OPTION_Wextra_ - Success
+-- Performing Test _HAVE_OPTION_Wnooverloadedvirtual_
+-- Performing Test _HAVE_OPTION_Wnooverloadedvirtual_ - Success
+-- Performing Test _HAVE_OPTION_Wnodeprecated_
+-- Performing Test _HAVE_OPTION_Wnodeprecated_ - Success
+-- Performing Test _HAVE_OPTION_Wnodeprecateddeclarations_
+-- Performing Test _HAVE_OPTION_Wnodeprecateddeclarations_ - Success
+-- Performing Test _HAVE_OPTION_pedantic_
+-- Performing Test _HAVE_OPTION_pedantic_ - Success
+-- Using the GNU gold linker.
+-- Available extensions 
+-- Added 239 tests to 'dpdk' (0 xfails)
+-- Added 537 tests to 'bmv2' (15 xfails)
+-- Added 13 tests to 'bmv2-parser-inline-opt-disabled' (0 xfails)
+-- Added 13 tests to 'bmv2-parser-inline-opt-enabled' (0 xfails)
+-- Added 1 tests to 'bmv2-ptf' (0 xfails)
+-- Added 25 tests to 'bmv2' (1 xfails)
+-- Start configuring eBPF back end
+-- Detected kernel version: 5.8.0-43-generic
+-- Check LLVM version with 'llvm-config --version'
+-- Found LLVM 10.0.0
+CMake Warning at backends/ebpf/CMakeLists.txt:197 (message):
+  Missing the libbpf dependency, disabling kernel tests.  You can install
+  libbpf by running './build_libbpf' in the /home/inspur/p4/p4c/backends/ebpf
+  folder.
+
+
+-- Added 26 tests to 'ebpf-bcc' (1 xfails)
+-- Added 26 tests to 'ebpf' (2 xfails)
+-- Done with configuring BPF back end
+-- Added 17 tests to 'ubpf' (0 xfails)
+-- Added 5 tests to 'p4' (0 xfails)
+-- Added 1171 tests to 'p4' (9 xfails)
+-- Added 12 tests to 'p4unroll' (0 xfails)
+-- Added 13 tests to 'p4' (0 xfails)
+-- Added 5 tests to 'err' (0 xfails)
+-- Added 304 tests to 'err' (0 xfails)
+-- Added 194 tests to 'p14_to_16' (0 xfails)
+-- Added 2 tests to 'graph' (0 xfails)
+-- CTest parallel: -j 20
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/inspur/p4/p4c/build
+++ make -j
+Scanning dependencies of target mkP4configdir
+Scanning dependencies of target linkp4cubpf
+Scanning dependencies of target linkgraphs
+Scanning dependencies of target linkp4test
+Scanning dependencies of target linkbmv2
+Scanning dependencies of target linkp4cebpf
+Scanning dependencies of target mkv1dirs
+Scanning dependencies of target mkp4dirs
+Scanning dependencies of target update_includes
+Scanning dependencies of target dpdk_includes
+Scanning dependencies of target linkp4cdpdk
+Scanning dependencies of target dpdk_runtime_dir
+[  0%] Built target mkP4configdir
+[  0%] Built target linkgraphs
+Scanning dependencies of target gtest
+Scanning dependencies of target p4ctoolkit
+[  0%] Built target mkv1dirs
+[  0%] Built target mkp4dirs
+[  0%] Built target linkp4cdpdk
+[  0%] Built target dpdk_runtime_dir
+[  0%] Building CXX object test/CMakeFiles/gtest.dir/frameworks/gtest/googletest/src/gtest-all.cc.o
+[  0%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/compile_context.cpp.o
+[  0%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/backtrace.cpp.o
+[  0%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/bitvec.cpp.o
+[  0%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/cstring.cpp.o
+[  0%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/error_catalog.cpp.o
+[  1%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/crash.cpp.o
+[  1%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/error_message.cpp.o
+[  1%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/big_int_util.cpp.o
+[  2%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/exename.cpp.o
+[  2%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/indent.cpp.o
+[  2%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/hex.cpp.o
+[  2%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/gc.cpp.o
+[  2%] Generating protobuf files for p4info on target DPDK.
+[  3%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/hash.cpp.o
+[  3%] Built target linkp4test
+[  3%] Built target dpdk_includes
+[  4%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/log.cpp.o
+[  4%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/json.cpp.o
+[  4%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/nullstream.cpp.o
+[  5%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/path.cpp.o
+[  5%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/options.cpp.o
+[  5%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/match.cpp.o
+[  5%] Built target linkp4cebpf
+[  5%] Built target linkbmv2
+[  5%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/timer.cpp.o
+[  5%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/stringify.cpp.o
+[  5%] Built target linkp4cubpf
+[  5%] Building CXX object lib/CMakeFiles/p4ctoolkit.dir/source_file.cpp.o
+[  5%] Built target update_includes
+Scanning dependencies of target p4c_driver
+[  6%] Copying p4c driver
+Scanning dependencies of target dpdk_runtime
+[  7%] Building CXX object backends/dpdk/CMakeFiles/dpdk_runtime.dir/__/__/control-plane/p4/config/dpdk/p4info.pb.cc.o
+[  7%] Built target p4c_driver
+[  7%] Linking CXX static library libdpdk_runtime.a
+[  7%] Built target dpdk_runtime
+[  8%] Linking CXX static library libp4ctoolkit.a
+[  8%] Linking CXX static library libgtest.a
+[  8%] Built target gtest
+[  8%] Built target p4ctoolkit
+[  8%] [BISON][IRgenParser] Building parser with bison 3.5.1
+[  8%] [FLEX][IRgenLexer] Building scanner with flex 2.6.4
+Scanning dependencies of target irgenerator
+[  8%] Building CXX object tools/ir-generator/CMakeFiles/irgenerator.dir/methods.cpp.o
+[  9%] Building CXX object tools/ir-generator/CMakeFiles/irgenerator.dir/generator.cpp.o
+[  9%] Building CXX object tools/ir-generator/CMakeFiles/irgenerator.dir/irclass.cpp.o
+[ 10%] Building CXX object tools/ir-generator/CMakeFiles/irgenerator.dir/type.cpp.o
+[ 10%] Building CXX object tools/ir-generator/CMakeFiles/irgenerator.dir/ir-generator.cpp.o
+[ 10%] Linking CXX executable irgenerator
+[ 10%] Built target irgenerator
+Scanning dependencies of target genIR
+[ 10%] Generating IR class files
+[ 10%] Built target genIR
+[ 10%] [BISON][v1Parser] Building parser with bison 3.5.1
+[ 10%] [BISON][p4Parser] Building parser with bison 3.5.1
+/home/inspur/p4/p4c/frontends/parsers/v1/v1parser.ypp:24/home/inspur/p4/p4c/frontends/parsers/p4/p4parser.ypp.1-36: :24.1警告: -36: 已弃用的指令：“%define parser_class_name {V1Parser}”，应使用 “%define api.parser.class {V1Parser}” [-Wdeprecated警告:] 
+已弃用的指令：“%define parser_class_name {P4Parser}”，应使用 “%define api.parser.class {P4Parser}” [-Wdeprecated]
+   24 | %define parser_c   24 | la%sdesf_innamee  {pV1arPasrseerr}_
+cl      | ^a~~s~s~~_~~n~~~a~~m~~e~~ ~~{~P~~4~~P~~~a~r~~s~~e~~r~~}
+      | 
+%define api.parser.class {V1Parser}
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      | %define api.parser.class {P4Parser}
+Scanning dependencies of target ir
+[ 12%] Building CXX object ir/CMakeFiles/ir.dir/visitor.cpp.o
+[ 12%] Building CXX object ir/CMakeFiles/ir.dir/pass_manager.cpp.o
+[ 13%] Building CXX object ir/CMakeFiles/ir.dir/ir.cpp.o
+[ 13%] Building CXX object ir/CMakeFiles/ir.dir/irutils.cpp.o
+[ 14%] Building CXX object ir/CMakeFiles/ir.dir/write_context.cpp.o
+[ 14%] Building CXX object ir/CMakeFiles/ir.dir/expression.cpp.o
+[ 14%] Building CXX object ir/CMakeFiles/ir.dir/base.cpp.o
+[ 15%] Building CXX object ir/CMakeFiles/ir.dir/dbprint-p4.cpp.o
+[ 15%] Building CXX object ir/CMakeFiles/ir.dir/dbprint.cpp.o
+[ 15%] Building CXX object ir/CMakeFiles/ir.dir/dbprint-expression.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/dbprint-stmt.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/dump.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/dbprint-type.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/json_parser.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/type.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/node.cpp.o
+[ 16%] Building CXX object ir/CMakeFiles/ir.dir/v1.cpp.o
+Scanning dependencies of target midend
+[ 16%] Building CXX object midend/CMakeFiles/midend.dir/actionSynthesis.cpp.o
+[ 16%] Building CXX object midend/CMakeFiles/midend.dir/complexComparison.cpp.o
+[ 16%] Building CXX object midend/CMakeFiles/midend.dir/convertEnums.cpp.o
+[ 16%] Building CXX object midend/CMakeFiles/midend.dir/convertErrors.cpp.o
+[ 17%] Building CXX object midend/CMakeFiles/midend.dir/booleanKeys.cpp.o
+[ 18%] Building CXX object midend/CMakeFiles/midend.dir/copyStructures.cpp.o
+[ 18%] Building CXX object midend/CMakeFiles/midend.dir/eliminateInvalidHeaders.cpp.o
+[ 18%] Building CXX object midend/CMakeFiles/midend.dir/coverage.cpp.o
+[ 18%] Building CXX object midend/CMakeFiles/midend.dir/eliminateNewtype.cpp.o
+[ 19%] Building CXX object midend/CMakeFiles/midend.dir/eliminateSerEnums.cpp.o
+[ 19%] Building CXX object midend/CMakeFiles/midend.dir/eliminateSwitch.cpp.o
+[ 19%] Building CXX object midend/CMakeFiles/midend.dir/eliminateTuples.cpp.o
+[ 20%] Building CXX object midend/CMakeFiles/midend.dir/eliminateTypedefs.cpp.o
+[ 20%] Building CXX object midend/CMakeFiles/midend.dir/expandEmit.cpp.o
+[ 20%] Building CXX object midend/CMakeFiles/midend.dir/expandLookahead.cpp.o
+[ 20%] Building CXX object midend/CMakeFiles/midend.dir/fillEnumMap.cpp.o
+[ 21%] Building CXX object midend/CMakeFiles/midend.dir/flattenHeaders.cpp.o
+[ 21%] Building CXX object midend/CMakeFiles/midend.dir/flattenInterfaceStructs.cpp.o
+[ 21%] Building CXX object midend/CMakeFiles/midend.dir/flattenUnions.cpp.o
+[ 21%] Building CXX object midend/CMakeFiles/midend.dir/flattenLogMsg.cpp.o
+[ 23%] Building CXX object midend/CMakeFiles/midend.dir/hsIndexSimplify.cpp.o
+[ 23%] Building CXX object midend/CMakeFiles/midend.dir/interpreter.cpp.o
+[ 23%] Building CXX object midend/CMakeFiles/midend.dir/global_copyprop.cpp.o
+[ 23%] Building CXX object midend/CMakeFiles/midend.dir/local_copyprop.cpp.o
+[ 24%] Building CXX object midend/CMakeFiles/midend.dir/nestedStructs.cpp.o
+[ 24%] Building CXX object midend/CMakeFiles/midend.dir/noMatch.cpp.o
+[ 24%] Building CXX object midend/CMakeFiles/midend.dir/orderArguments.cpp.o
+[ 25%] Building CXX object midend/CMakeFiles/midend.dir/parserUnroll.cpp.o
+[ 25%] Building CXX object midend/CMakeFiles/midend.dir/predication.cpp.o
+[ 25%] Building CXX object midend/CMakeFiles/midend.dir/removeAssertAssume.cpp.o
+[ 25%] Building CXX object midend/CMakeFiles/midend.dir/removeComplexExpressions.cpp.o
+[ 26%] Building CXX object midend/CMakeFiles/midend.dir/removeExits.cpp.o
+[ 26%] Building CXX object midend/CMakeFiles/midend.dir/removeLeftSlices.cpp.o
+[ 26%] Building CXX object midend/CMakeFiles/midend.dir/removeMiss.cpp.o
+[ 27%] Building CXX object midend/CMakeFiles/midend.dir/replaceSelectRange.cpp.o
+[ 27%] Building CXX object midend/CMakeFiles/midend.dir/removeSelectBooleans.cpp.o
+[ 27%] Building CXX object midend/CMakeFiles/midend.dir/removeUnusedParameters.cpp.o
+[ 27%] Building CXX object midend/CMakeFiles/midend.dir/simplifyBitwise.cpp.o
+[ 27%] Building CXX object midend/CMakeFiles/midend.dir/saturationElim.cpp.o
+[ 28%] Building CXX object midend/CMakeFiles/midend.dir/simplifyKey.cpp.o
+[ 28%] Building CXX object midend/CMakeFiles/midend.dir/simplifySelectCases.cpp.o
+[ 28%] Building CXX object midend/CMakeFiles/midend.dir/simplifySelectList.cpp.o
+[ 28%] Building CXX object midend/CMakeFiles/midend.dir/singleArgumentSelect.cpp.o
+[ 29%] Building CXX object midend/CMakeFiles/midend.dir/tableHit.cpp.o
+[ 29%] Building CXX object midend/CMakeFiles/midend.dir/validateProperties.cpp.o
+/home/inspur/p4/p4c/frontends/parsers/p4/p4parser.ypp: 警告: fix-its can be applied.  Rerun with option '--update'. [-Wother]
+/home/inspur/p4/p4c/frontends/parsers/v1/v1parser.ypp: 警告: fix-its can be applied.  Rerun with option '--update'. [-Wother]
+[ 29%] Running Flex on parsers/p4
+[ 30%] Running Flex on parsers/v1
+Scanning dependencies of target frontend
+[ 30%] Building CXX object frontends/CMakeFiles/frontend.dir/__/ir/ir-generated.cpp.o
+[ 30%] Building CXX object frontends/CMakeFiles/frontend.dir/common/applyOptionsPragmas.cpp.o
+[ 31%] Building CXX object frontends/CMakeFiles/frontend.dir/common/constantFolding.cpp.o
+[ 31%] Building CXX object frontends/CMakeFiles/frontend.dir/common/constantParsing.cpp.o
+[ 31%] Building CXX object frontends/CMakeFiles/frontend.dir/common/options.cpp.o
+[ 31%] Building CXX object frontends/CMakeFiles/frontend.dir/common/parser_options.cpp.o
+[ 32%] Building CXX object frontends/CMakeFiles/frontend.dir/common/parseInput.cpp.o
+[ 32%] Building CXX object frontends/CMakeFiles/frontend.dir/common/resolveReferences/referenceMap.cpp.o
+[ 32%] Building CXX object frontends/CMakeFiles/frontend.dir/common/resolveReferences/resolveReferences.cpp.o
+[ 32%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/actionsInlining.cpp.o
+[ 34%] Building CXX object frontends/CMakeFiles/frontend.dir/parsers/parserDriver.cpp.o
+[ 34%] Building CXX object frontends/CMakeFiles/frontend.dir/parsers/p4/p4AnnotationLexer.cpp.o
+[ 34%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/callGraph.cpp.o
+[ 35%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/checkConstants.cpp.o
+[ 35%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/createBuiltins.cpp.o
+[ 35%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/checkCoreMethods.cpp.o
+[ 35%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/checkNamedArgs.cpp.o
+[ 36%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/def_use.cpp.o
+[ 36%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/defaultArguments.cpp.o
+[ 36%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/deprecated.cpp.o
+[ 37%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/dontcareArgs.cpp.o
+[ 37%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/directCalls.cpp.o
+[ 37%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/enumInstance.cpp.o
+[ 37%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/evaluator/evaluator.cpp.o
+[ 38%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/evaluator/substituteParameters.cpp.o
+[ 38%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/externInstance.cpp.o
+[ 38%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/fromv1.0/converters.cpp.o
+[ 38%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/fromv1.0/programStructure.cpp.o
+[ 39%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/frontend.cpp.o
+[ 39%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/functionsInlining.cpp.o
+[ 39%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/hierarchicalNames.cpp.o
+[ 39%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/inlining.cpp.o
+[ 40%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/localizeActions.cpp.o
+[ 40%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/methodInstance.cpp.o
+[ 40%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/modelInstances.cpp.o
+[ 40%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/moveConstructors.cpp.o
+[ 41%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/moveDeclarations.cpp.o
+[ 42%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/parserControlFlow.cpp.o
+[ 40%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/parameterSubstitution.cpp.o
+[ 42%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/parserCallGraph.cpp.o
+[ 42%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/parseAnnotations.cpp.o
+[ 43%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/removeParameters.cpp.o
+[ 43%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/redundantParsers.cpp.o
+[ 43%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/reassociation.cpp.o
+[ 43%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/removeReturns.cpp.o
+[ 45%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/resetHeaders.cpp.o
+[ 45%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/setHeaders.cpp.o
+[ 45%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/reservedWords.cpp.o
+[ 45%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/simplify.cpp.o
+[ 45%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/sideEffects.cpp.o
+[ 45%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/simplifyDefUse.cpp.o
+[ 46%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/simplifyParsers.cpp.o
+[ 46%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/simplifySwitch.cpp.o
+[ 47%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/specializeGenericTypes.cpp.o
+[ 47%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/specialize.cpp.o
+[ 47%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/specializeGenericFunctions.cpp.o
+[ 47%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/strengthReduction.cpp.o
+[ 47%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/structInitializers.cpp.o
+[ 48%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/switchAddDefault.cpp.o
+[ 48%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/symbol_table.cpp.o
+[ 48%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/tableKeyNames.cpp.o
+[ 48%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/tableApply.cpp.o
+[ 49%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/ternaryBool.cpp.o
+[ 49%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/toP4/toP4.cpp.o
+[ 49%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/bindVariables.cpp.o
+[ 49%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/syntacticEquivalence.cpp.o
+[ 50%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeChecker.cpp.o
+[ 50%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeConstraints.cpp.o
+[ 50%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeSubstitution.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeUnification.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeSubstitutionVisitor.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/uniqueNames.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/uselessCasts.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/validateParsedProgram.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/typeMap.cpp.o
+[ 51%] Building CXX object frontends/CMakeFiles/frontend.dir/p4-14/typecheck.cpp.o
+[ 52%] Building CXX object frontends/CMakeFiles/frontend.dir/p4/unusedDeclarations.cpp.o
+[ 53%] Building CXX object frontends/CMakeFiles/frontend.dir/p4-14/header_type.cpp.o
+[ 53%] Building CXX object frontends/CMakeFiles/frontend.dir/parsers/p4/p4parser.cpp.o
+[ 53%] Building CXX object frontends/CMakeFiles/frontend.dir/parsers/p4/p4lexer.cc.o
+[ 53%] Building CXX object frontends/CMakeFiles/frontend.dir/__/backends/dpdk/spec.cpp.o
+[ 54%] Building CXX object frontends/CMakeFiles/frontend.dir/parsers/v1/v1parser.cpp.o
+[ 54%] Building CXX object frontends/CMakeFiles/frontend.dir/parsers/v1/v1lexer.cc.o
+[ 54%] Building CXX object frontends/CMakeFiles/frontend.dir/__/backends/dpdk/printUtils.cpp.o
+[ 54%] Building CXX object frontends/CMakeFiles/frontend.dir/__/backends/dpdk/dbprint-dpdk.cpp.o
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:583：midend/CMakeFiles/midend.dir/simplifySelectCases.cpp.o] 错误 1
+make[2]: *** 正在等待未完成的任务....
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:362：midend/CMakeFiles/midend.dir/local_copyprop.cpp.o] 错误 1
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1007：frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeUnification.cpp.o] 错误 1
+make[2]: *** 正在等待未完成的任务....
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:409：frontends/CMakeFiles/frontend.dir/p4/evaluator/substituteParameters.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:180：midend/CMakeFiles/midend.dir/eliminateSerEnums.cpp.o] 错误 1
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:708：frontends/CMakeFiles/frontend.dir/p4/setHeaders.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [ir/CMakeFiles/ir.dir/build.make:63：ir/CMakeFiles/ir.dir/base.cpp.o] 错误 1
+make[2]: *** 正在等待未完成的任务....
+c++: fatal error: 已杀死 signal terminated program cc1plus
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:669：frontends/CMakeFiles/frontend.dir/p4/removeReturns.cpp.o] 错误 1
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:539：frontends/CMakeFiles/frontend.dir/p4/modelInstances.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:344：frontends/CMakeFiles/frontend.dir/p4/deprecated.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:414：midend/CMakeFiles/midend.dir/parserUnroll.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:258：midend/CMakeFiles/midend.dir/fillEnumMap.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:76：midend/CMakeFiles/midend.dir/booleanKeys.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:526：frontends/CMakeFiles/frontend.dir/p4/methodInstance.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:331：frontends/CMakeFiles/frontend.dir/p4/defaultArguments.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:448：frontends/CMakeFiles/frontend.dir/p4/fromv1.0/programStructure.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1189：frontends/CMakeFiles/frontend.dir/__/backends/dpdk/dbprint-dpdk.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:201：frontends/CMakeFiles/frontend.dir/common/resolveReferences/resolveReferences.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1124：frontends/CMakeFiles/frontend.dir/parsers/p4/p4parser.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:622：midend/CMakeFiles/midend.dir/tableHit.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:630：frontends/CMakeFiles/frontend.dir/p4/reassociation.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:994：frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeSubstitutionVisitor.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:149：frontends/CMakeFiles/frontend.dir/common/options.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:110：frontends/CMakeFiles/frontend.dir/common/applyOptionsPragmas.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1033：frontends/CMakeFiles/frontend.dir/p4/uniqueNames.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:440：midend/CMakeFiles/midend.dir/removeAssertAssume.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1059：frontends/CMakeFiles/frontend.dir/p4/uselessCasts.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:214：frontends/CMakeFiles/frontend.dir/parsers/parserDriver.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:227：frontends/CMakeFiles/frontend.dir/parsers/p4/p4AnnotationLexer.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:609：midend/CMakeFiles/midend.dir/singleArgumentSelect.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:461：frontends/CMakeFiles/frontend.dir/p4/frontend.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:292：frontends/CMakeFiles/frontend.dir/p4/checkNamedArgs.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:877：frontends/CMakeFiles/frontend.dir/p4/tableApply.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:266：frontends/CMakeFiles/frontend.dir/p4/checkConstants.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:479：midend/CMakeFiles/midend.dir/removeLeftSlices.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:565：frontends/CMakeFiles/frontend.dir/p4/moveDeclarations.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:578：frontends/CMakeFiles/frontend.dir/p4/parameterSubstitution.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:518：midend/CMakeFiles/midend.dir/replaceSelectRange.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:305：frontends/CMakeFiles/frontend.dir/p4/createBuiltins.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:175：frontends/CMakeFiles/frontend.dir/common/parseInput.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:635：midend/CMakeFiles/midend.dir/validateProperties.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:318：frontends/CMakeFiles/frontend.dir/p4/def_use.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:162：frontends/CMakeFiles/frontend.dir/common/parser_options.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:968：frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeConstraints.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1111：frontends/CMakeFiles/frontend.dir/parsers/p4/p4lexer.cc.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:123：frontends/CMakeFiles/frontend.dir/common/constantFolding.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1046：frontends/CMakeFiles/frontend.dir/p4/unusedDeclarations.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:396：frontends/CMakeFiles/frontend.dir/p4/evaluator/evaluator.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:513：frontends/CMakeFiles/frontend.dir/p4/localizeActions.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:825：frontends/CMakeFiles/frontend.dir/p4/strengthReduction.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:570：midend/CMakeFiles/midend.dir/simplifyKey.cpp.o] 错误 1
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1163：frontends/CMakeFiles/frontend.dir/__/backends/dpdk/spec.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:955：frontends/CMakeFiles/frontend.dir/p4/typeChecking/typeChecker.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:890：frontends/CMakeFiles/frontend.dir/p4/tableKeyNames.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:773：frontends/CMakeFiles/frontend.dir/p4/simplifySwitch.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:487：frontends/CMakeFiles/frontend.dir/p4/hierarchicalNames.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:253：frontends/CMakeFiles/frontend.dir/p4/callGraph.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:591：frontends/CMakeFiles/frontend.dir/p4/parseAnnotations.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:500：frontends/CMakeFiles/frontend.dir/p4/inlining.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1020：frontends/CMakeFiles/frontend.dir/p4/typeMap.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:383：frontends/CMakeFiles/frontend.dir/p4/enumInstance.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:531：midend/CMakeFiles/midend.dir/removeUnusedParameters.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:812：frontends/CMakeFiles/frontend.dir/p4/specializeGenericTypes.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:505：midend/CMakeFiles/midend.dir/removeSelectBooleans.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1137：frontends/CMakeFiles/frontend.dir/parsers/v1/v1lexer.cc.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:747：frontends/CMakeFiles/frontend.dir/p4/simplifyDefUse.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:279：frontends/CMakeFiles/frontend.dir/p4/checkCoreMethods.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:786：frontends/CMakeFiles/frontend.dir/p4/specialize.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:695：frontends/CMakeFiles/frontend.dir/p4/resetHeaders.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:219：midend/CMakeFiles/midend.dir/eliminateTypedefs.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:760：frontends/CMakeFiles/frontend.dir/p4/simplifyParsers.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:435：frontends/CMakeFiles/frontend.dir/p4/fromv1.0/converters.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:916：frontends/CMakeFiles/frontend.dir/p4/toP4/toP4.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [ir/CMakeFiles/ir.dir/build.make:141：ir/CMakeFiles/ir.dir/dump.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:643：frontends/CMakeFiles/frontend.dir/p4/redundantParsers.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:929：frontends/CMakeFiles/frontend.dir/p4/typeChecking/bindVariables.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:193：midend/CMakeFiles/midend.dir/eliminateSwitch.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1072：frontends/CMakeFiles/frontend.dir/p4/validateParsedProgram.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:188：frontends/CMakeFiles/frontend.dir/common/resolveReferences/referenceMap.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [midend/CMakeFiles/midend.dir/build.make:310：midend/CMakeFiles/midend.dir/flattenUnions.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:1098：frontends/CMakeFiles/frontend.dir/p4-14/header_type.cpp.o] 错误 1
+c++: fatal error: 已杀死 signal terminated program cc1plus
+compilation terminated.
+make[2]: *** [frontends/CMakeFiles/frontend.dir/build.make:942：frontends/CMakeFiles/frontend.dir/p4/typeChecking/syntacticEquivalence.cpp.o] 错误 1
